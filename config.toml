@@ -1,0 +1,32 @@
+baseURL = 'http://example.org/'
+
+theme = 'simple-theme'
+relativeURLS = true
+
+[module]
+[[module.mounts]]
+source = 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
+target = 'assets/js/bootstrap.bundle.min.js'
+
+defaultContentLanguage = 'sl'
+defaultContentLanguageInSubdir = true
+[languages]
+    [languages.sl]
+    contentDir = 'content/sl'
+    disabled = false
+    languageCode = 'sl-SI'
+    languageDirection = 'ltr'
+    languageName = 'Slovenščina'
+    title = 'Poletni seminar ljubljana in pokal samuraj'
+    weight = 1
+    languageFlag = '🇸🇮'
+
+    [languages.en]
+    contentDir = 'content/en'
+    disabled = false
+    languageCode = 'en-GB'
+    languageDirection = 'ltr'
+    languageName = 'English'
+    title = 'Project Documentation'
+    weight = 2
+    languageFlag = '🇬🇧'
