@@ -1,4 +1,6 @@
 baseURL = 'http://example.org/'
+defaultContentLanguage = 'sl'
+defaultContentLanguageInSubdir = true
 
 theme = 'simple-theme'
 relativeURLS = true
@@ -8,8 +10,6 @@ relativeURLS = true
 source = 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
 target = 'assets/js/bootstrap.bundle.min.js'
 
-defaultContentLanguage = 'sl'
-defaultContentLanguageInSubdir = true
 [languages]
     [languages.sl]
     contentDir = 'content/sl'

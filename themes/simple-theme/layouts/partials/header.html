@@ -7,18 +7,19 @@
     <ul class="nav nav-pills">
         <li class="nav-item"><a href="#" class="nav-link">{{ T "info" }}</a></li>
         <li class="nav-item"><a href="#" class="nav-link">{{ T "apply_here" }}</a></li>
-    </ul>
-
-    {{ $siteLanguages := site.Languages}}
-    {{ $pageLang := .Page.Lang}}
-    {{- range .Page.AllTranslations }}
-        {{ $translation := . }}
-        {{- range sort $siteLanguages "Weight" "asc" }}
-            {{- if eq $translation.Lang .Lang }}
-                {{ if ne $pageLang .Lang}}
-                <a class="flagselect" href="{{ $translation.Permalink | relURL }}">{{ .Params.languageNameShort }}{{ .Params.languageFlag }}</a>
-                {{ end }}
+        <li class="nav-item d-flex flex-column justify-content-center">
+            {{ $siteLanguages := site.Languages}}
+            {{ $pageLang := .Page.Lang}}
+            {{- range .Page.AllTranslations }}
+                {{ $translation := . }}
+                {{- range sort $siteLanguages "Weight" "asc" }}
+                    {{- if eq $translation.Lang .Lang }}
+                        {{ if ne $pageLang .Lang}}
+                            <a class="nav-link language-switch" href="{{ $translation.Permalink | relURL }}">{{ .Params.languageNameShort }}{{ .Params.languageFlag }}</a>
+                        {{ end }}
+                    {{- end }}
+                {{- end }}
             {{- end }}
-        {{- end }}
-    {{- end }}
+        </li>
+    </ul>
 </header>
